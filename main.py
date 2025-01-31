@@ -36,7 +36,3 @@ def translate_word(word: str = Query(..., description="Enter a Michigan slang wo
     word_lower = word.lower()  # Convert input to lowercase
     translation = slang_dict.get(word_lower, "No translation found. Try another word.")
     return {"word": word, "translation": translation}
-
-# Only needed for local testing
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
